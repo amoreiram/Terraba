@@ -1,0 +1,19 @@
+Clase 
+Subclase 
+Descripción 
+Tipo de solicitud 
+Moneda 
+Fondo 
+Grupo de Compras 
+Organización de Compras
+Programa
+Subprograma
+Fondo 
+Tipo de Imputación 
+Plan de Compras 
+Unidad de Medida
+Responsable(Analista)
+Funcionario que da Visto Bueno
+Centro Gestor 
+Tipo de Contratación
+ 
