@@ -1,0 +1,27 @@
+{
+  "name": "fe",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Terraba/Terraba",
+  "authors": [
+    "melendezgg <melendezgg@gmail.com>",
+    "gastonalfaro <alfarouga@hacienda.go.cr>",
+    "amoreiram <moreiraca@hacienda.go.cr"
+  ],
+  "description": "Terraba fe",
+  "keywords": [
+    "terraba"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular": "~1.2.22",
+    "bootstrap": "~3.2.0",
+    "html5-boilerplate": "~4.3.0"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
