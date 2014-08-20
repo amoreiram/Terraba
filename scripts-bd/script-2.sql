@@ -15,11 +15,12 @@ SELECT [NUMPROV]
 SELECT [NUMPROV]
       ,[CODMERC]
       ,[CATALOGO]
-      ,[NORMA_CALIDAD] into terraba.dbo.mercancias_por_proveedor
+      ,[NORMA_CALIDAD] into terraba.dbo.mercancias_x_proveedor
   FROM [COMPRARED].[dbo].[PROV_MERC]
 
+  
 SELECT [ID_MINISTERIO]
-      ,[NUMPROV] into terraba.dbo.proveedores_por_institucion
+      ,[NUMPROV] into terraba.dbo.proveedores_x_institucion
   FROM [COMPRARED].[dbo].[PROVEEDOR_MINISTERIO]
 
 SELECT [ID_MINISTERIO]
@@ -35,27 +36,24 @@ SELECT [ID_MINISTERIO]
       ,[SOCIEDAD] into terraba.dbo.instituciones
   FROM [COMPRARED].[dbo].[MINISTERIO]
 
+  
 SELECT [NUMPROV]
-      ,[OBSERVACION] into terraba.dbo.observaciones_por_proveedor
+      ,[OBSERVACION] into terraba.dbo.observaciones_x_proveedor
   FROM [COMPRARED].[dbo].[PROVEEDOR_OBSERVACIONES]
 
 -- Agregar llave y fecha a las observaciones por proveedor y borrar observaciones sin texto
 
 use terraba
 
-alter table terraba.dbo.observaciones_por_proveedor
+alter table terraba.dbo.observaciones_x_proveedor
 alter column observacion varchar(max)
 
-delete terraba.dbo.observaciones_por_proveedor
-where OBSERVACIOn = ''
+delete terraba.dbo.observaciones_x_proveedor
+where OBSERVACION = ''
 
-alter table terraba.dbo.observaciones_por_proveedor
+alter table terraba.dbo.observaciones_x_proveedor
 add id int identity primary key not null
 
-alter table observaciones_por_proveedor
+alter table observaciones_x_proveedor
 add fecha datetime null
-
-select * from observaciones_por_proveedor
-
---
 

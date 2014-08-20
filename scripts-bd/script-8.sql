@@ -81,9 +81,10 @@ GO
 
 
 --  ******** TABLASSS **********
-select * into terraba..tipos_de_personeria from TipoPersona
+
+select * into terraba..tipo_personeria from TipoPersona
 go
-select * into terraba..lugares_de_apertura from LUGARES_APERTURA
+select * into terraba..lugares_apertura from LUGARES_APERTURA
 go
 select * into terraba..instrumentos_financieros from INSTRUMENTOS_FINANCIEROS
 go
@@ -91,9 +92,9 @@ select * into terraba..adendums from ADENDUMS
 go
 select * into terraba..recursos from RECURSOS
 go
-select * into terraba..aprobacion_de_adendums from APROBACION_ADENDUM
+select * into terraba..aprobacion_adendums from APROBACION_ADENDUM
 go
-select * into terraba..aprobacion_de_contratos from APROBACION_CONTRATO
+select * into terraba..aprobacion_contratos from APROBACION_CONTRATO
 go
 select * into terraba..catalogo_mercancias from MERCANCIA
 go
@@ -103,11 +104,11 @@ select * into terraba..tipo_solicitudPedido_usado from sop.TipoSolicitudUsado
 go
 select * into terraba..solicitudes_pedido from sop.SolicitudPedido
 go
-select * into terraba..organizacion_de_compras from sop.OrganizacionCompras
+select * into terraba..organizacion_compras from sop.OrganizacionCompras
 go
 select * into terraba..lineas_solicitud_pedido from sop.LineaSolicitudPedido
 go
-select * into terraba..grupo_de_compras from sop.GrupoCompras
+select * into terraba..grupo_compras from sop.GrupoCompras
 go
 select * into terraba..fondo from sop.Fondo
 go
@@ -117,7 +118,9 @@ select * into terraba..avaluos from sop.Avaluo
 go
 select * into terraba..autorizacion_contraloria from sop.AutorizacionCGR
 go
-select * into terraba..avaluo_de_articulos from sop.ArticuloAvaluo
+select * into terraba..avaluo_articulos from sop.ArticuloAvaluo
 go
 select * into terraba..anexos_solicitud_pedido from sop.Anexo
+go
+select * INTO terraba..relacion_catalogos_CGO_COG from CATALOGOS_RELACION_CGO_COG
 go
