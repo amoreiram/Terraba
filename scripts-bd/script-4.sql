@@ -12,12 +12,12 @@ SELECT [NUMPROV]
       ,[DESCRIPCION]
       ,[CATALOGO]
       ,[CODMERC]
-      ,[FEC_INCUMPLIMIENTO] into terraba.dbo.sanciones_por_proveedor
+      ,[FEC_INCUMPLIMIENTO] into terraba.dbo.sanciones_x_proveedor
   FROM [COMPRARED].[dbo].[PROVEEDOR_SANCION]
-
-  go
-
-  SELECT [ID]
+  
+ go
+ 
+ SELECT [ID]
       ,[TITUTRAM]
       ,[TRAMIDEN]
       ,[FEC_ACLARACION]
@@ -29,7 +29,7 @@ SELECT [NUMPROV]
 
 use terraba
 go
-EXEC sp_rename 'sanciones_por_proveedor.TITUTRAM', 'titulo_institucion', 'COLUMN';
+EXEC sp_rename 'sanciones_x_proveedor.TITUTRAM', 'titulo_institucion', 'COLUMN';
 EXEC sp_rename 'aclaraciones.TITUTRAM', 'titulo_institucion', 'COLUMN';
 
 use COMPRARED
@@ -38,19 +38,21 @@ go
 SELECT [TITUTRAM]
       ,[TRAMIDEN]
       ,[LINEA]
-      ,[ID_SOLICITUD] into terraba.dbo.aclaraciones_por_linea
-  FROM [COMPRARED].[dbo].[ACLARACION_LINEAS]
-
+      ,[ID_SOLICITUD] into terraba.dbo.aclaraciones_x_linea
+  FROM [COMPRARED].[dbo].[ACLARACION_LINEAS]  
+  
 use terraba
 go
-EXEC sp_rename 'aclaraciones_por_linea.TITUTRAM', 'titulo_institucion', 'COLUMN';
+EXEC sp_rename 'aclaraciones_x_linea.TITUTRAM', 'titulo_institucion', 'COLUMN';
 
 use COMPRARED
 go
 
 SELECT [ID_ACLARACION]
-      ,[ID_SOLICITUD] into terraba.dbo.aclaraciones_por_solicitudes_aclaracion
+      ,[ID_SOLICITUD] into terraba.dbo.aclaraciones_x_solicitudes_aclaracion
   FROM [COMPRARED].[dbo].[ACLARACION_SOLICITUD]
+
+  
 
 use COMPRARED
 go
@@ -105,7 +107,10 @@ SELECT [ID]
       ,[ID_MODIFICACION] into terraba.dbo.solicitudes_aclaracion
   FROM [COMPRARED].[dbo].[SOLICITUD_ACLARACION]
 
+  
+/*
 USE terraba
 GO
 EXEC sp_rename 'terraba.dbo.solicitudes', 'solicitudes_pedido'
 EXEC sp_rename 'terraba.dbo.solicitudes_eliminadas', 'solicitudes_pedido_eliminadas'
+*/

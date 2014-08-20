@@ -63,9 +63,10 @@ SELECT [TRAMIDEN]
       ,[ESTADOLIN]
       ,[POS_SOLICIT]
       ,[EMPAQUE]
-      ,[DESCRIPCION_GENERICA] into terraba.dbo.lineas_por_tramites
+      ,[DESCRIPCION_GENERICA] into terraba.dbo.lineas_x_tramite
   FROM [COMPRARED].[dbo].[TRAMITE_LINEA]
 
+  
 go
 SELECT [TramIden]
       ,[TituTram]
@@ -80,7 +81,7 @@ SELECT [TRAMIDEN]
       ,[ID_PROGRAMA]
       ,[ID_SUBPROGRAMA]
       ,[ID_MINISTERIO]
-      ,[ID_PROYECTO] into terraba.dbo.tramites_por_dependencia
+      ,[ID_PROYECTO] into terraba.dbo.tramites_x_dependencia
   FROM [COMPRARED].[dbo].[TRAMITE_DEPENDENCIA]
 
 go
@@ -94,10 +95,11 @@ SELECT [TRAMIDEN]
       ,[PUBLICABLE]
       ,[TIPO_DOCUMENTO]
       ,[MEDIO]
-      ,[CONTRALORIA] into terraba.dbo.documentos_por_tramite
+      ,[CONTRALORIA] into terraba.dbo.documentos_x_tramite
   FROM [COMPRARED].[dbo].[TRAMITE_DOCUMENTO]
-
+  
 go
+/*
 SELECT [SolicitudID]
       ,[NumProv]
       ,[FechaCreacion]
@@ -123,7 +125,7 @@ SELECT [SolicitudesEliminadasID]
       ,[FechaBorrado]
       ,[IdNotificacion] into terraba.dbo.solicitudes_eliminadas
   FROM [COMPRARED].[dbo].[SolicitudesEliminadas]
-
+  */
 use terraba
 go
 EXEC sp_rename 'tramites.TITUTRAM', 'titulo_institucion', 'COLUMN';

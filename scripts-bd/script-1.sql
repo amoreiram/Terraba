@@ -69,5 +69,3 @@ GO
 ALTER TABLE proveedores
 ADD CONSTRAINT pk_proveedores PRIMARY KEY(numprov)
 
-select count(*) from proveedores
-
