@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="terrabaApp">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,6 +29,10 @@
     <![endif]-->
 
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app/app.js"></script>    
+    <script src="app/Controladores.js"></script>
 
     <style>
         body {
@@ -82,7 +86,7 @@
                     <li data-ng-hide="!authentication.isAuth" class="ng-hide"><a href="#/refresh">Refresh Token</a></li>
                     <li data-ng-hide="!authentication.isAuth" class="ng-hide"><a href="" data-ng-click="logOut()">Logout</a></li>-->
                     <li data-ng-hide="authentication.isAuth" class=""> <a href="login.html">Login</a></li>
-                    <li data-ng-hide="authentication.isAuth" class=""> <a href="registrar.html">Registro</a></li>
+                    <li data-ng-hide="authentication.isAuth" class=""> <a href="#/registrar-usuario">Registro</a></li>
                 </ul>
             </div><!-- /.nav-collapse -->
 
@@ -90,14 +94,9 @@
     </div><!-- /.navbar -->
 
     <div class="container">
-        <div class="jumbotron">
-            <div class="container">
-                <div class="page-header text-center">
-                    <h1>Térraba</h1>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.</p>
-            </div>
-        </div>        
+        <div ng-view>
+
+        </div>
     </div>
 
     <footer>
