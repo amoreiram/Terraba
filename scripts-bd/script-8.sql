@@ -124,3 +124,13 @@ select * into terraba..anexos_solicitud_pedido from sop.Anexo
 go
 select * INTO terraba..relacion_catalogos_CGO_COG from CATALOGOS_RELACION_CGO_COG
 go
+select * into terraba..institucion_x_tipoSolicitud from sop.Institucion
+go
+select * into terraba..tipos_imputacion from TipoImputacion
+go
+select * into terraba..plan_compras from PLAN_COMPRAS
+go
+select * into terraba..plan_compras_linea from PLAN_COMPRAS_LINEA
+go
+select * into terraba..plan_compras_version from PLAN_COMPRA_VERSION
+go
