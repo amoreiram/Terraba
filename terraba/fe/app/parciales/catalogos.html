@@ -1,16 +1,16 @@
-﻿<div class="container" ng-controller="ControladorFormasPago">
+<div class="container" ng-controller="ControladorCatalogos">
     <div class="row">
         <form class="form-horizontal" role="form">
             <div class="form-group">
                 <label for="id" class="col-sm-2 control-label">Id</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="id" required tabindex="1" autofocus="true" placeholder="Código de la forma de pago" ng-model="nuevaFormaPago.id">
+                    <input type="text" class="form-control" id="id" required tabindex="1" autofocus="true" placeholder="Código de catálogo" ng-model="nuevoCatalogo.id">
                 </div>
             </div>
             <div class="form-group">
                 <label for="descripcion" class="col-sm-2 control-label">Descripción</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" id="descripcion" required tabindex="2" placeholder="Nombre o descripción de la forma de pago" ng-model="nuevaFormaPago.descripcion">
+                    <input type="text" class="form-control" id="descripcion" required tabindex="2" placeholder="Nombre o descripción del catálogo" ng-model="nuevoCatalogo.descripcion">
                 </div>
             </div>
             <div class="form-group">
@@ -22,7 +22,7 @@
     </div>
     <div class="row">
         <div class="panel panel-primary">
-            <div class="panel-heading">Formas de pago</div>
+            <div class="panel-heading">Lista de catálogos</div>
             <div class="panel-body">
                 <p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             </div>      
@@ -35,9 +35,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="f in formasPago | filter:busqueda">
-                        <td>{{f.id}}</td>
-                        <td><a  href="#" ng-click="modificar(f.id)">{{f.descripcion}}</a></td>
+                    <tr ng-repeat="c in catalogos | filter : busqueda">
+                        <td>{{c.id}}</td>
+                        <td><a  href="#" ng-click="modificar(c.id)">{{c.descripcion}}</a></td>
                     </tr>
                 </tbody>
             </table>
