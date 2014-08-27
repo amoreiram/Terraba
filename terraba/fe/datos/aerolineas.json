@@ -1,0 +1,94 @@
+[
+  {
+    "id": "AA",
+    "descripcion": "GASTON"
+  },
+  {
+    "id": "AEROMEX",
+    "descripcion": "Aerovías de Mexico S.A. De C.V."
+  },
+  {
+    "id": "AEROREP",
+    "descripcion": "Aero República S.A."
+  },
+  {
+    "id": "AIRCANADA",
+    "descripcion": "Air Canada"
+  },
+  {
+    "id": "AMERICAN",
+    "descripcion": "American Airlines Inc"
+  },
+  {
+    "id": "AVIANCA",
+    "descripcion": "Aerovías del Continente Americano, S.A. (Avianca)"
+  },
+  {
+    "id": "AVIATECA",
+    "descripcion": "Aviateca S.A."
+  },
+  {
+    "id": "CONDORFLUG",
+    "descripcion": "Condor Flugdienst"
+  },
+  {
+    "id": "CONTAIR",
+    "descripcion": "Continental Airlines Inc"
+  },
+  {
+    "id": "COPA",
+    "descripcion": "Compañía Panameña De Aviación (Copa)"
+  },
+  {
+    "id": "DELTA",
+    "descripcion": "Delta Airlines Inc"
+  },
+  {
+    "id": "FRONTIER",
+    "descripcion": "Frontier Airlines Inc"
+  },
+  {
+    "id": "IBERIA",
+    "descripcion": "Iberia, Líneas Aéreas de España Sociedad Anónima"
+  },
+  {
+    "id": "II",
+    "descripcion": "Al"
+  },
+  {
+    "id": "JETBLUE",
+    "descripcion": "Jetblue Airways Corporation"
+  },
+  {
+    "id": "LACSA",
+    "descripcion": "Líneas Aéreas Costarricenses S.A. (Lacsa)"
+  },
+  {
+    "id": "MEXICANA",
+    "descripcion": "Mexicana de Aviación"
+  },
+  {
+    "id": "PARSA",
+    "descripcion": "Parsa S.A."
+  },
+  {
+    "id": "SANSA",
+    "descripcion": "Servicios Aereos Nacionales (Sansa)"
+  },
+  {
+    "id": "SPIRIT",
+    "descripcion": "Spirit Airlines"
+  },
+  {
+    "id": "TACA",
+    "descripcion": "Taca Internacional S.A."
+  },
+  {
+    "id": "TRANSAM",
+    "descripcion": "Trans American Airlines S.A. (Taca Perú)"
+  },
+  {
+    "id": "USAIRWAYS",
+    "descripcion": "US Airways Inc"
+  }
+]

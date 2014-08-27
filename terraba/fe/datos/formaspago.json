@@ -1,0 +1,50 @@
+[
+  {
+    "id": "00",
+    "descripcion": "Indefinido (Convenios)"
+  },
+  {
+    "id": "01",
+    "descripcion": "Contra Avance de Obra"
+  },
+  {
+    "id": "02",
+    "descripcion": "Por Entragas Parciales"
+  },
+  {
+    "id": "03",
+    "descripcion": "Contra Entrega Completa"
+  },
+  {
+    "id": "04",
+    "descripcion": "Conta Finiquito (Obras públicas)"
+  },
+  {
+    "id": "05",
+    "descripcion": "Pago Anticipado"
+  },
+  {
+    "id": "07",
+    "descripcion": "Por Tarifa (Concesiones)"
+  },
+  {
+    "id": "08",
+    "descripcion": "Dación de pago"
+  },
+  {
+    "id": "09",
+    "descripcion": "Cesión de pago"
+  },
+  {
+    "id": "10",
+    "descripcion": "Pago en contrataciones irregulares"
+  },
+  {
+    "id": "20",
+    "descripcion": "Pagos mensuales"
+  },
+  {
+    "id": "30",
+    "descripcion": "Forma usual de Gobierno"
+  }
+]

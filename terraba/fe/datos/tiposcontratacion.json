@@ -1,0 +1,52 @@
+[
+  {
+    "id": "BID",
+    "descripcion": "CONTRATACION DEL BID",
+    "orden": 10
+  },
+  {
+    "id": "CDE",
+    "descripcion": "CONTRATACION DIRECTA",
+    "orden": 5
+  },
+  {
+    "id": "LAB",
+    "descripcion": "LICITACION ABREVIADA",
+    "orden": 7
+  },
+  {
+    "id": "LPI",
+    "descripcion": "LICITACION PUBLICA INTERNACIONAL",
+    "orden": 1
+  },
+  {
+    "id": "LPU",
+    "descripcion": "LICITACION PUBLICA",
+    "orden": 2
+  },
+  {
+    "id": "LRG",
+    "descripcion": "LICITACION POR REGISTRO",
+    "orden": 3
+  },
+  {
+    "id": "LRT",
+    "descripcion": "LICITACION RESTRINGIDA",
+    "orden": 4
+  },
+  {
+    "id": "MDE",
+    "descripcion": "CONTRATACION MD CCSS",
+    "orden": 8
+  },
+  {
+    "id": "MEE",
+    "descripcion": "CONTRATACION ME CCSS",
+    "orden": 9
+  },
+  {
+    "id": "REM",
+    "descripcion": "REMATE",
+    "orden": 6
+  }
+]

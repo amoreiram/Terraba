@@ -1,12 +1,14 @@
-﻿var terrabaApp = angular.module('terrabaApp', ['ngRoute', 'Controladores']);
+﻿var terrabaApp = angular.module('terrabaApp', ['ngRoute', 'ngAnimate', 'Controladores']);
 
 terrabaApp.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/', {
+    $routeProvider.when('/login', {
+        redirectTo: '/login.html'
+    }).when('/', {
         templateUrl: '/app/parciales/terraba.html'
     }).when('/registrar-usuario', {
         templateUrl: '/app/parciales/registrar-usuario.html',
         controller: 'ControladorUsuarios'
-    }).when('/registrar-forma-pago', {
+    }).when('/formas-pago', {
         templateUrl: '/app/parciales/formas-pago.html',
         controller: 'ControladorFormasPago'
     }).when('/configuracion', {
@@ -19,6 +21,9 @@ terrabaApp.config(['$routeProvider', function ($routeProvider) {
     }).when('/tipos-contratacion', {
         templateUrl: '/app/parciales/tipos-contratacion.html',
         controller: 'ControladorTiposContratacion'
+    }).when('/tipos-imputacion', {
+        templateUrl: '/app/parciales/tipos-imputacion.html',
+        controller: 'ControladorTiposImputacion'
     }).otherwise({
         redirectTo: '/'
     });

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "CGO",
+    "descripcion": "Clasificador del Gasto Objeto"
+  },
+  {
+    "id": "COG",
+    "descripcion": "Clasificador por Objeto del Gasto"
+  }
+]

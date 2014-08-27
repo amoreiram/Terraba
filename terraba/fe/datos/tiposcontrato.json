@@ -1,0 +1,22 @@
+[
+  {
+    "id": "CO",
+    "descripcion": "Concesión"
+  },
+  {
+    "id": "NA",
+    "descripcion": "No aplica"
+  },
+  {
+    "id": "OB",
+    "descripcion": "Obras"
+  },
+  {
+    "id": "SB",
+    "descripcion": "Bienes y servicios"
+  },
+  {
+    "id": "SP",
+    "descripcion": "Servicios publicos"
+  }
+]
