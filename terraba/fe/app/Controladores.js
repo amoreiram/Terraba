@@ -3,7 +3,7 @@
 terrabaControllers.controller('ControladorUsuarios', ['$scope', '$http',
   function ($scope, $http) {
 
-  } ]);
+  }]);
 
 terrabaControllers.controller('ControladorFormasPago', ['$scope', '$http', '$location',
   function ($scope, $http, $location) {
@@ -50,40 +50,85 @@ terrabaControllers.controller('ControladorFormasPago', ['$scope', '$http', '$loc
               }
           }
       }
-  } ]);
+  }]);
 
-  terrabaControllers.controller('ControladorCatalogos', ['$scope', '$http', '$location',
+terrabaControllers.controller('ControladorCatalogos', ['$scope', '$http', '$location',
+function ($scope, $http, $location) {
+    $http.get('http://localhost:53812/api/catalogo').success(function (datos) {
+        $scope.catalogos = datos;
+    });
+
+    $scope.guardar = function () {
+        /*_.find($scope.formasPago, function (f) {
+        return f.id == $scope.nuevaFormaPago.id;
+        });*/
+
+        // lodash.js - Encontrar código existente dentro de la tabla
+        var f = _.find($scope.catalogos, { id: $scope.nuevoCatalogo.id });
+
+        if (f == undefined) { // El registro no existe
+            $scope.catalogos.push($scope.nuevoCatalogo);
+        } else { // El registro existe y se modifica
+            for (i in $scope.catalogos) {
+                if ($scope.catalogos[i].id == $scope.nuevoCatalogo.id) {
+                    $scope.catalogos[i] = $scope.nuevoCatalogo;
+                }
+            }
+        }
+
+        $scope.nuevoCatalogo = {};
+    }
+
+    $scope.borrar = function (id) {
+        for (i in $scope.catalogos) {
+            if ($scope.catalogos[i].id == id) {
+                $scope.catalogos.splice(i, 1);
+                $scope.nuevoCatalogo = {};
+            }
+        }
+    }
+
+    $scope.modificar = function (id) {
+        window.event.preventDefault();
+
+        for (i in $scope.catalogos) {
+            if ($scope.catalogos[i].id == id) {
+                $scope.nuevoCatalogo = angular.copy($scope.catalogos[i]);
+            }
+        }
+    }
+}]);
+
+terrabaControllers.controller('ControladorTiposContratacion', ['$scope', '$http', '$location',
   function ($scope, $http, $location) {
-      $http.get('http://localhost:53812/api/catalogo').success(function (datos) {
-          $scope.catalogos = datos;
+      $http.get('http://localhost:53812/api/tiposcontratacion').success(function (datos) {
+          $scope.tiposcontratacion = datos;
       });
 
       $scope.guardar = function () {
-          /*_.find($scope.formasPago, function (f) {
-          return f.id == $scope.nuevaFormaPago.id;
-          });*/
 
           // lodash.js - Encontrar código existente dentro de la tabla
-          var f = _.find($scope.catalogos, { id: $scope.nuevoCatalogo.id });
+          var f = _.find($scope.tiposcontratacion, { id: $scope.nuevoTipoContratacion.id });
 
           if (f == undefined) { // El registro no existe
-              $scope.catalogos.push($scope.nuevoCatalogo);
+              $scope.tiposcontratacion.push($scope.nuevoTipoContratacion);
           } else { // El registro existe y se modifica
-              for (i in $scope.catalogos) {
-                  if ($scope.catalogos[i].id == $scope.nuevoCatalogo.id) {
-                      $scope.catalogos[i] = $scope.nuevoCatalogo;
+
+              for (i in $scope.tiposcontratacion) {
+                  if ($scope.tiposcontratacion[i].id == $scope.nuevoTipoContratacion.id) {
+                      $scope.tiposcontratacion[i] = $scope.nuevoTipoContratacion;
                   }
               }
           }
 
-          $scope.nuevoCatalogo = {};
+          $scope.nuevoTipoContratacion = {};
       }
 
       $scope.borrar = function (id) {
-          for (i in $scope.catalogos) {
-              if ($scope.catalogos[i].id == id) {
-                  $scope.catalogos.splice(i, 1);
-                  $scope.nuevoCatalogo = {};
+          for (i in $scope.tiposcontratacion) {
+              if ($scope.tiposcontratacion[i].id == id) {
+                  $scope.tiposcontratacion.splice(i, 1);
+                  $scope.nuevoTipoContratacion = {};
               }
           }
       }
@@ -91,10 +136,10 @@ terrabaControllers.controller('ControladorFormasPago', ['$scope', '$http', '$loc
       $scope.modificar = function (id) {
           window.event.preventDefault();
 
-          for (i in $scope.catalogos) {
-              if ($scope.catalogos[i].id == id) {
-                  $scope.nuevoCatalogo = angular.copy($scope.catalogos[i]);
+          for (i in $scope.tiposcontratacion) {
+              if ($scope.tiposcontratacion[i].id == id) {
+                  $scope.nuevoTipoContratacion = angular.copy($scope.tiposcontratacion[i]);
               }
           }
       }
-  } ]);
+  }]);

@@ -16,6 +16,9 @@ terrabaApp.config(['$routeProvider', function ($routeProvider) {
     }).when('/catalogos', {
         templateUrl: '/app/parciales/catalogos.html',
         controller: 'ControladorCatalogos'
+    }).when('/tipos-contratacion', {
+        templateUrl: '/app/parciales/tipos-contratacion.html',
+        controller: 'ControladorTiposContratacion'
     }).otherwise({
         redirectTo: '/'
     });
