@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "codigo": "C",
+    "descripcion": "Centro gestor"
+  },
+  {
+    "id": 2,
+    "codigo": "T",
+    "descripcion": "Cuentas especiales"
+  },
+  {
+    "id": 29,
+    "codigo": "A",
+    "descripcion": "Un Ejemplo"
+  },
+  {
+    "id": 30,
+    "codigo": "ABCDE",
+    "descripcion": "Otro ejemplo de tipo de imputacion"
+  },
+  {
+    "id": 31,
+    "codigo": "X",
+    "descripcion": "Prueba"
+  },
+  {
+    "id": 32,
+    "codigo": "Y",
+    "descripcion": "Mas pruebas y validando"
+  }
+]

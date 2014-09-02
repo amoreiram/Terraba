@@ -1,0 +1,78 @@
+﻿<style>
+    body {
+        padding-top: 140px;
+        padding-bottom: 40px;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        background-color: #f5f5f5;
+    }
+
+    .form-signin {
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+            .form-signin .form-control:focus {
+                z-index: 2;
+            }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+</style>
+
+<div class="container">
+    <form class="form-signin" role="form" novalidate ng-submit="login()">
+        <input type="email" class="form-control" placeholder="Nombre de usuario" required autofocus ng-model="email">
+        <div ng-show="formulario.codigo.$dirty && formulario.codigo.$invalid">
+            <span ng-show="formulario.codigo.$error.required" class="label label-danger">Requerido.</span>
+            <span ng-show="formulario.codigo.$error.minlength" class="label label-danger">No cumple con la longitud mínima.</span>
+            <span ng-show="formulario.codigo.$error.maxlength" class="label label-danger">Sobrepasa la longitud máxima.</span>
+        </div>
+        <input type="password" class="form-control" placeholder="Contraseña" required ng-model="password">
+        <div ng-show="formulario.codigo.$dirty && formulario.codigo.$invalid">
+            <span ng-show="formulario.codigo.$error.required" class="label label-danger">Requerido.</span>
+            <span ng-show="formulario.codigo.$error.minlength" class="label label-danger">No cumple con la longitud mínima.</span>
+            <span ng-show="formulario.codigo.$error.maxlength" class="label label-danger">Sobrepasa la longitud máxima.</span>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" value="recuerdeme"> Recuérdeme
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+</div>
