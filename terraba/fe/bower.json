@@ -18,7 +18,8 @@
     "html5-boilerplate": "~4.3.0",
     "angular-route": "~1.2.22",
     "fontawesome": "~4.2.0",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "angular-local-storage": "~0.0.7"
   },
   "ignore": [
     "**/.*",

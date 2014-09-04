@@ -1,17 +1,34 @@
 ﻿
-app.controller('usuariosController', ['$scope', '$http', '$location',
-function ($scope, $http, $location) {    
+app.controller('usuariosController', ['$scope', '$http', '$location', 'authService',
+function ($scope, $http, $location, authService) {
+
+    //var requestBody = "grant_type=password&username=" + $scope.loginData.username + "&password=" + $scope.loginData.password;
     
     $http.get('http://localhost:52465/api/Accounts/').success(function (data) {
         $scope.usuarios = data;
     });
 
-    $scope.login = function () {
-        $http.post('http://localhost:52465/token', $scope.loginData, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (data, status, headers, cfg) {
+   /* $scope.login = function () {        
+
+        var requestBody = "grant_type=password&username=" + $scope.loginData.username + "&password=" + $scope.loginData.password;
+
+        $http.post('http://localhost:52465/token', requestBody, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (data, status, headers, cfg) {
             console.log(data);
+            $location.path('/');
         });
-        console.log($scope.loginData);
-    }
+    }*/
+
+    $scope.login = function () {
+
+        authService._login($scope.loginData).then(function (response) {
+
+            $location.path('/');
+
+        },
+         function (err) {
+             $scope.message = err.error_description;
+         });
+    };
 
     $scope.guardar = function () {        
         $http.post('http://localhost:52465/api/Accounts/Register', $scope.usuario).success(function (nuevo, status, headers, cfg) {
