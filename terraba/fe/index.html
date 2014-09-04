@@ -41,10 +41,12 @@
 
     <!-- Carga de controladores -->
     <script src="app/controllers/controllers.js"></script>
+    <script src="app/controllers/solicitudPedidoController.js"></script>
     <script src="app/controllers/loginController.js"></script>
     <script src="app/controllers/catalogosController.js"></script>
     <script src="app/controllers/tiposImputacionController.js"></script>
     <script src="app/controllers/formasPagoController.js"></script>
+    <script src="app/controllers/usuariosController.js"></script>
 
     <style>
         body {
@@ -127,6 +129,9 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="#/solicitud-pedido">Solicitud de pedido</a></li>
+                            <li><a href="#/propuesta">Solicitud de pedido - Propuesta </a></li>
+                            <li class="divider"></li>
                             <li><a href="#">Aerolíneas</a></li>
                             <li><a href="#/catalogos">Catálogos</a></li>
                             <li><a href="#">Emisores financieros</a></li>
@@ -134,6 +139,7 @@
                             <li><a href="#">Fuentes de financiamiento</a></li>
                             <li><a href="#/tipos-contratacion">Tipos de contratación</a></li>
                             <li><a href="#/tipos-imputacion">Tipos de imputacion</a></li>
+                            <li><a href="#/usuarios">Usuarios</a></li>
                         </ul>
                     </li>
                     <li data-ng-hide="authentication.isAuth" class=""> <a href="#/configuracion" class="tip" data-toggle="dropdown" data-placement="bottom" title="Configuración"><span class="glyphicon glyphicon-cog"></span></a></li>

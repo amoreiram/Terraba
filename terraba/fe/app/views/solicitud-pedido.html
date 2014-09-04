@@ -1,0 +1,78 @@
+﻿<div>
+    <div class="page-header hidden-xs hidden-sm">
+        <h1>Ingrese una nueva solicitud de pedido. <small>Lorem ipsum dolom....</small></h1>
+    </div>
+    <form class="form-horizontal" name="formulario" role="form" ng-submit="guardar()" novalidate>
+        <div class="form-group">
+            <label for="tipo" class="col-sm-2 control-label">Tipo de solicitud</label>
+            <div class="col-sm-10">
+                <select name="tipo" id="tipo" class="form-control" ng-model="solicitud.tipo" ng-options="tipo.nombre for tipo in tiposSolicitud">
+                    <option value="" ng-hide="solicitud.tipo">Seleccione un tipo de solicitud</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="oficio" class="col-sm-2 control-label">Número de oficio</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="oficio" placeholder="Número de oficio" ng-model="solicitud.oficio" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="justificacion" class="col-sm-2 control-label">Justificación</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="justificacion" placeholder="Justificación" ng-model="solicitud.justificacion" required rows="4"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="moneda" class="col-sm-4 control-label">Moneda</label>
+                    <div class="col-sm-8">
+                        <select name="moneda" class="form-control" id="moneda" ng-model="solicitud.moneda" ng-options="moneda.descripcion for moneda in monedas" required>
+                            <option value="" ng-hide="solicitud.moneda">Seleccione un tipo de moneda</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="fondo" class="col-sm-4 control-label">Fondo</label>
+                    <div class="col-sm-8">
+                        <select name="fondo" class="form-control" id="fondo" placeholder="Fondo" ng-model="solicitud.fondo" ng-options="fondo.descripcion for fondo in fondos" required>
+                            <option value="" ng-hide="solicitud.fondo">Seleccione un tipo de fondo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="grupo" class="col-sm-2 control-label">Grupo de compras</label>
+            <div class="col-sm-10">
+                <select name="grupo" class="form-control" id="grupo" placeholder="Grupo de compras" ng-model="solicitud.grupo" required ng-options="grupo.descripcion for grupo in gruposCompra">
+                    <option value="" ng-hide="solicitud.grupo">Seleccione el grupo de compras</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="organizacion" class="col-sm-2 control-label">Organización de compras</label>
+            <div class="col-sm-10">
+                <select name="organizacion" class="form-control" id="organizacion" placeholder="Organización de compras" ng-model="solicitud.organizacion" required ng-options="organizacion.descripcion for organizacion in organizacionesCompra">
+                    <option value="" ng-hide="solicitud.organizacion">Seleccione una organización de compras</option>
+                </select>
+            </div>
+        </div>
+
+</div>
+<hr />
+<div class="form-group">
+    <div class="col-sm-12">
+        <input type="submit" class="btn btn-primary" value="Guardar" />
+        <a href="#" class="btn btn-default">Agregar líneas a la solicitud</a>
+    </div>
+</div>
+    </form>
+</div>

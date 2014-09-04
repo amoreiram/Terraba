@@ -1,7 +1,7 @@
 ﻿
 app.controller('tiposImputacionController', ['$scope', '$http', '$location',
 function ($scope, $http, $location) {
-    $http.get('/datos/tiposimputacion.txt').success(function (datos) {
+    $http.get('http://localhost:53812/api/tiposimputacion').success(function (datos) {
         $scope.tiposImputacion = datos;
     });
 
@@ -10,7 +10,7 @@ function ($scope, $http, $location) {
         var f = _.find($scope.tiposImputacion, { id: $scope.nuevoTipoImputacion.id });
 
         if (f == undefined) { // El registro no existe
-            /*$http.post('/datos/tiposimputacion', $scope.nuevoTipoImputacion).success(function (nuevo, status, headers, cfg) {
+            $http.post('http://localhost:53812/api/tiposimputacion', $scope.nuevoTipoImputacion).success(function (nuevo, status, headers, cfg) {
                 console.log(nuevo);
                 console.log(status);
                 console.log(headers);
@@ -18,18 +18,19 @@ function ($scope, $http, $location) {
                 $scope.tiposImputacion.push(nuevo);
             }).error(function (error) {
                 console.log('Error: ' + JSON.stringify(error));
-            });*/
+            });
+
             $scope.tiposImputacion.push(nuevo);
 
         } else { // El registro existe y se modifica
             for (i in $scope.tiposImputacion) {
                 if ($scope.tiposImputacion[i].id == $scope.nuevoTipoImputacion.id) {
-                    /*                    $http.put('http://localhost:53812/api/tiposimputacion/' +  $scope.tiposImputacion[i].id, $scope.nuevoTipoImputacion).success(function () {
-                                            
-                                        }).error(function (error, status) {
-                                            console.log('Error: ' + JSON.stringify(error));
-                                            console.log(status);
-                                        });*/
+                    $http.put('http://localhost:53812/api/tiposimputacion/' + $scope.tiposImputacion[i].id, $scope.nuevoTipoImputacion).success(function () {
+
+                    }).error(function (error, status) {
+                        console.log('Error: ' + JSON.stringify(error));
+                        console.log(status);
+                    });
 
                     $scope.tiposImputacion[i] = $scope.nuevoTipoImputacion;
                 }

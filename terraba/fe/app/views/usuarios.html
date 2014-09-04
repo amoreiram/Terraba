@@ -1,0 +1,95 @@
+﻿<div ng-controller="usuariosController">
+    <div class="page-header hidden-xs hidden-sm">
+        <h1>Ingrese un nuevo usuario. <small>Modifique uno existente dentro de la tabla, seleccionando el username.</small></h1>
+    </div>
+    <form class="form-horizontal" name="formulario" role="form" ng-submit="guardar()" novalidate>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" ng-model="usuario.nombre" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="apellidos" class="col-sm-2 control-label">Apellidos</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" ng-model="usuario.apellidos" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="apellidos" class="col-sm-2 control-label">Institucion</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="institucion" placeholder="Institucion" ng-model="usuario.institucion" required>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label for="email" class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Correo Electrónico" ng-model="usuario.email" required>
+                    <div ng-show="formulario.email.$dirty && formulario.email.$invalid">
+                        <!--<div ng-show="!formulario.codigo.$pristine">-->
+                        <span ng-show="formulario.email.$error.required" class="label label-danger">Requerido.</span>
+                        <span ng-show="formulario.email.$invalid" class="label label-danger">Digite una dirección de correo electrónico válida.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contrasena" class="col-sm-2 control-label">Contraseña</label>
+                <div class="col-sm-10">
+                    <input type="password" name="password" class="form-control" id="contrasena" placeholder="Contraseña" ng-model="usuario.password" required>
+                    <div ng-show="formulario.email.$dirty && formulario.email.$invalid">
+                        <!--<div ng-show="!formulario.codigo.$pristine">-->
+                        <span ng-show="formulario.password.$error.required" class="label label-danger">Requerido.</span>
+                        <span ng-show="formulario.password.$invalid" class="label label-danger">Digite una password correcto.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="confirmacion" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" name="confirmacion" class="form-control" id="confirmacion" placeholder="Confirmación de la contraseña" ng-model="usuario.confirmPassword" required>
+                    <div ng-show="formulario.email.$dirty && formulario.email.$invalid">
+                        <!--<div ng-show="!formulario.codigo.$pristine">-->
+                        <span ng-show="formulario.confirmacion.$error.required" class="label label-danger">Requerido.</span>
+                        <span ng-show="formulario.confirmacion.$invalid" class="label label-danger">Digite una password correcto.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input type="submit" class="btn btn-default" value="Guardar" />
+            </div>
+        </div>
+    </form>
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Usuarios</div>
+            <div class="panel-body">
+                <p class="hidden-sm hidden-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <input type="search" class="form-control" ng-model="busqueda" placeholder="Digite la información que deseé buscar...">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>                        
+                        <th>Email</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Institución</th>                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="u in usuarios | filter : busqueda">                        
+                        <td>{{u.email}}</td>
+                        <td>{{u.nombre}}</td>
+                        <td>{{u.apellidos}}</td>
+                        <td>{{u.institucion}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

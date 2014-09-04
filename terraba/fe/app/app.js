@@ -5,14 +5,15 @@ app.config(function ($routeProvider) {
     $routeProvider.when('/', {
         templateUrl: '/app/views/terraba.html'
     }).when('/login', {
-        templateUrl: '/app/views/registrar-usuario.html',
-        controller: 'loginController'
+        templateUrl: '/app/views/login.html',
+        controller: 'usuariosController'
     }).when('/my', {
         templateUrl: '/app/views/perfil.html'
     }).when('/mensajes', {
         templateUrl: '/app/views/mensajes.html'
-    }).when('/registrar-usuario', {
-        templateUrl: '/app/views/registrar-usuario.html'
+    }).when('/usuarios', {
+        templateUrl: '/app/views/usuarios.html',
+        controller: 'usuariosController'
     }).when('/formas-pago', {
         templateUrl: '/app/views/formas-pago.html',
         controller: 'formasPagoController'
@@ -29,6 +30,12 @@ app.config(function ($routeProvider) {
     }).when('/tipos-imputacion', {
         templateUrl: '/app/views/tipos-imputacion.html',
         controller: 'tiposImputacionController'
+    }).when('/solicitud-pedido', {
+        templateUrl: '/app/views/solicitud-pedido.html',
+        controller: 'solicitudPedidoController'
+    }).when('/propuesta', {
+        templateUrl: '/app/views/propuesta.html',
+        controller: 'solicitudPedidoController'
     }).otherwise({
         redirectTo: '/'
     });
