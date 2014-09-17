@@ -1,8 +1,7 @@
-﻿
-app.controller('usuariosController', ['$scope', '$http', '$location', 'authService',
-function ($scope, $http, $location, authService) {
-
+﻿app.controller('usuariosController', ['$scope', '$http', '$location', 'authService', function ($scope, $http, $location, authService) {
     //var requestBody = "grant_type=password&username=" + $scope.loginData.username + "&password=" + $scope.loginData.password;
+
+    authService.saludo;
     
     $http.get('http://localhost:52465/api/Accounts/').success(function (data) {
         $scope.usuarios = data;
@@ -20,10 +19,9 @@ function ($scope, $http, $location, authService) {
 
     $scope.login = function () {
 
-        authService._login($scope.loginData).then(function (response) {
 
+        authService.login($scope.loginData).then(function (response) {
             $location.path('/');
-
         },
          function (err) {
              $scope.message = err.error_description;

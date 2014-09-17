@@ -1,0 +1,63 @@
+﻿<div>
+    <div class="page-header hidden-xs hidden-sm">
+        <h1>Ingrese un nuevo tipo de imputación. <small>Modifique uno existente dentro de la tabla, seleccionando la descripción.</small></h1>
+    </div>
+    <form novalidate class="form-horizontal col-md-12" role="form" name="formulario" ng-submit="guardar()">
+        <div class="form-group">
+            <paper-input name="codigo" id="codigo" class="col-sm-12" floatinglabel required autofocus label="Código del tipo de imputacion" input-value="nuevoTipoImputacion.codigo" ng-model="nuevoTipoImputacion.codigo" ng-maxlength="5" ng-minlength="1"></paper-input>
+            <div ng-show="formulario.codigo.$dirty && formulario.codigo.$invalid">
+                <!--<div ng-show="!formulario.codigo.$pristine">-->
+                <span ng-show="formulario.codigo.$error.required" class="label label-danger">Requerido.</span>
+                <span ng-show="formulario.codigo.$error.minlength" class="label label-danger">No cumple con la longitud mínima.</span>
+                <span ng-show="formulario.codigo.$error.maxlength" class="label label-danger">Sobrepasa la longitud máxima.</span>
+            </div>
+
+            <paper-input name="codigo" id="codigo" class="col-sm-12" floatinglabel required autofocus label="Código del tipo de imputacion" input-value="nuevoTipoImputacion.codigo" ng-model="nuevoTipoImputacion.codigo" ng-maxlength="5" ng-minlength="1"></paper-input>
+            <div ng-show="formulario.codigo.$dirty && formulario.codigo.$invalid">
+                <!--<div ng-show="!formulario.codigo.$pristine">-->
+                <span ng-show="formulario.codigo.$error.required" class="label label-danger">Requerido.</span>
+                <span ng-show="formulario.codigo.$error.minlength" class="label label-danger">No cumple con la longitud mínima.</span>
+                <span ng-show="formulario.codigo.$error.maxlength" class="label label-danger">Sobrepasa la longitud máxima.</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <paper-input class="col-sm-12" name="descripcion" floatinglabel required label="Descripción del tipo de imputacion" ng-model="nuevoTipoImputacion.descripcion" ng-minlength="5"></paper-input>
+            <div ng-show="formulario.descripcion.$dirty && formulario.descripcion.$invalid">
+                <span ng-show="formulario.descripcion.$error.required" class="label label-danger">Requerido.</span>
+                <span ng-show="formulario.descripcion.$error.minlength" class="label label-danger">No cumple con la longitud mínima.</span>
+                <span ng-show="formulario.descripcion.$error.maxlength" class="label label-danger">Sobrepasa la longitud máxima.</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default" id="guardar">Guardar</button>
+                <!--<button type="submit" class="btn btn-default" id="guardar" ng-disabled="formulario.$invalid">Guardar</button>-->
+            </div>
+        </div>
+    </form>
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Tipos de imputación</div>
+            <div class="panel-body">
+                <p class="hidden-sm hidden-xs">Los tipo de imputación lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <input type="search" class="form-control" ng-model="busqueda" placeholder="Digite la información que deseé buscar...">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="t in tiposImputacion | orderBy : 'descripcion' | filter : busqueda">
+                        <td>{{t.id}}</td>
+                        <td>{{t.codigo}}</td>
+                        <td><a href="#" ng-click="modificar(t.id)">{{t.descripcion}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

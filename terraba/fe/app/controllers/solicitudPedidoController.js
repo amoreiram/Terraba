@@ -93,4 +93,8 @@ function ($scope, $http, $location) {
 
     $scope.guardar = function () {
     }
+
+    $scope.agregarLineas = function () {
+        //$location.path('/lineas-solicitud-pedido');
+    }
 }]);

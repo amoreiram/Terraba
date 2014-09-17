@@ -8,8 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.png">
     <title>Térraba</title>
-    <base href="/">
-
+    <base href="/">    
     <!-- Bootstrap core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="animacion.css" rel="stylesheet" />
@@ -36,18 +35,26 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
     <script src="bower_components/lodash/dist/lodash.js"></script>
-    
+   
     <!-- Cargar angular.js app -->
     <script src="app/app.js"></script>
 
+    <!-- Cargar servicios -->
+    <script src="app/services/authService.js"></script>
+
     <!-- Carga de controladores -->
     <script src="app/controllers/controllers.js"></script>
+    <script src="app/controllers/aerolineasController.js"></script>
     <script src="app/controllers/solicitudPedidoController.js"></script>
+    <script src="app/controllers/lineasSolicitudPedido.js"></script>
     <script src="app/controllers/loginController.js"></script>
     <script src="app/controllers/catalogosController.js"></script>
+    <script src="app/controllers/fondosController.js"></script>
+    <script src="app/controllers/tiposSolicitudPedidoController.js"></script>
     <script src="app/controllers/tiposImputacionController.js"></script>
     <script src="app/controllers/formasPagoController.js"></script>
     <script src="app/controllers/usuariosController.js"></script>
+    <script src="app/controllers/indexController.js"></script>
 
     <style>
         body {
@@ -94,7 +101,7 @@
     </style>
 </head>
 
-<body>
+<body ng-controller="indexController">
     <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -120,12 +127,12 @@
                                                                             <li data-ng-hide="!authentication.isAuth" class="ng-hide"><a href="" data-ng-click="logOut()">Logout</a></li>-->
                     <li data-ng-hide="authentication.isAuth" data-placement="bottom" class="tip" title="Mi perfil">
                         <a href="#/my">
-                            <img src="http://www.gravatar.com/avatar/01ec15b76c71c5839473dd22c082119b" style="width: 20px; border-radius: 50px;"> melendezgg
+                            <img src="http://www.gravatar.com/avatar/01ec15b76c71c5839473dd22c082119b" style="width: 20px;" class="img-circle"> melendezgg
                         </a>
                     </li>
                     <li data-ng-hide="authentication.isAuth" class=""> <a href="#/mensajes" class="tip" data-placement="bottom" title="Tiene 4 mensajes pendientes"><span class="glyphicon glyphicon-envelope"></span><span class="badge pull-right">4</span></a></li>
                     <li data-ng-hide="authentication.isAuth" class="dropdown">
-                        <a href="#" class="dropdown-toggle tip" data-toggle="dropdown" data-placement="bottom" title="Mantenimientos...">
+                        <a href="" class="dropdown-toggle tip" data-toggle="dropdown" data-placement="bottom" title="Mantenimientos...">
                             <span class="glyphicon glyphicon-pencil"></span>
                             <span class="caret"></span>
                         </a>
@@ -133,21 +140,20 @@
                             <li><a href="#/solicitud-pedido">Solicitud de pedido</a></li>
                             <li><a href="#/propuesta">Solicitud de pedido - Propuesta </a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Aerolíneas</a></li>
+                            <li><a href="#/aerolineas">Aerolíneas</a></li>
                             <li><a href="#/catalogos">Catálogos</a></li>
                             <li><a href="#">Emisores financieros</a></li>
                             <li><a href="#/formas-pago">Formas de pago</a></li>
-                            <li><a href="#">Fuentes de financiamiento</a></li>
+                            <li><a href="#/fondos">Fondos</a></li>
                             <li><a href="#/tipos-contratacion">Tipos de contratación</a></li>
                             <li><a href="#/tipos-imputacion">Tipos de imputacion</a></li>
+                            <li><a href="#/tipos-solicitud-pedido">Tipos de solicitud de pedido</a></li>
                             <li><a href="#/usuarios">Usuarios</a></li>
                         </ul>
                     </li>
                     <li data-ng-hide="authentication.isAuth" class=""> <a href="#/configuracion" class="tip" data-toggle="dropdown" data-placement="bottom" title="Configuración"><span class="glyphicon glyphicon-cog"></span></a></li>
                     <li data-ng-hide="authentication.isAuth" class=""> <a href="#/login" class="tip" data-placement="bottom" title="Log In"><span class="glyphicon glyphicon-log-in"></span></a></li>
-                    <li data-ng-hide="authentication.isAuth" class=""> <a href="#/logout" class="tip" data-toggle="dropdown" data-placement="bottom" title="LogOut"><span class="glyphicon glyphicon-log-out"></span></a></li>
-                    <!--<li data-ng-hide="authentication.isAuth" class=""> <a href="#/registrar-usuario">Registro</a></li>-->
-
+                    <li data-ng-hide="authentication.isAuth" class=""> <a href="" class="tip" data-placement="bottom" title="LogOut" ng-click="logOut()"><span class="glyphicon glyphicon-log-out"></span></a></li>
                 </ul>
             </div><!-- /.nav-collapse -->
         </div><!-- /.container -->
@@ -176,5 +182,7 @@
         $('.tip').tooltip();
 
     </script>
+
+    
 </body>
 </html>

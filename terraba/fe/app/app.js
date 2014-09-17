@@ -1,8 +1,11 @@
-﻿
+'use strict';
 var app = angular.module('TerrabaApp', ['ngRoute']);
 
 app.config(function ($routeProvider) {
-    $routeProvider.when('/', {
+    $routeProvider.when('/aerolineas', {
+        templateUrl: '/app/views/aerolineas.html',
+        controller: 'aerolineasController'
+    }).when('/', {
         templateUrl: '/app/views/terraba.html'
     }).when('/login', {
         templateUrl: '/app/views/login.html',
@@ -24,11 +27,20 @@ app.config(function ($routeProvider) {
     }).when('/catalogos', {
         templateUrl: '/app/views/catalogos.html',
         controller: 'catalogosController'
+    }).when('/fondos', {
+        templateUrl: '/app/views/fondos.html',
+        controller: 'fondosController'
     }).when('/tipos-contratacion', {
         templateUrl: '/app/views/tipos-contratacion.html',
         controller: 'tiposContratacionController'
     }).when('/tipos-imputacion', {
         templateUrl: '/app/views/tipos-imputacion.html',
+        controller: 'tiposImputacionController'
+    }).when('/tipos-solicitud-pedido', {
+        templateUrl: '/app/views/tipos-solicitud-pedido.html',
+        controller: 'tiposSolicitudPedidoController'
+    }).when('/tipos-imputacion-p', {
+        templateUrl: '/app/views/tipos-imputacion-polymer.html',
         controller: 'tiposImputacionController'
     }).when('/solicitud-pedido', {
         templateUrl: '/app/views/solicitud-pedido.html',
@@ -36,6 +48,9 @@ app.config(function ($routeProvider) {
     }).when('/propuesta', {
         templateUrl: '/app/views/propuesta.html',
         controller: 'solicitudPedidoController'
+    }).when('/lineas-solicitud-pedido', {
+        templateUrl: '/app/views/lineas-solicitud-pedido.html',
+        controller: 'lineasSolicitudPedidoController'
     }).otherwise({
         redirectTo: '/'
     });
@@ -44,40 +59,6 @@ app.config(function ($routeProvider) {
     //$locationProvider.html5Mode(true);
 });
 
-app.factory('authService', [function ($http) {
-    var user;
-
-    function login(username, password) {
-        var deferred = $q.defer();
-
-        $http.post("/api/login", {
-            userName: userName,
-            password: password
-        }).then(function (result) {
-            userInfo = {
-                accessToken: result.data.access_token,
-                userName: result.data.userName
-            };
-            $window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
-            deferred.resolve(userInfo);
-        }, function (error) {
-            deferred.reject(error);
-        });
-
-        return deferred.promise;
-    }
-
-    return {
-        establerUsuario: function (u) {
-            user = u;
-        },
-
-        isAuth: function () {
-            return (user) ? user : false;
-        }
-    }
+app.run(['authService', function (authService) {
+   // authService.fillAuthData();
 }]);
-
-//app.run(['authService', function (authService) {
-////    //authService.fillAuthData();
-//}]);

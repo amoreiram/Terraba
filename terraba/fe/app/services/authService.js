@@ -1,6 +1,8 @@
-﻿app.factory('authService', ['$http', '$q', 'localStorageService', function ($http, $q, localStorageService) {
+app.factory('authService', ['$http', '$q', function ($http, $q) {
 
-    var authServiceFactory = {};
+	var authServiceFactory = {};
+
+	authServiceFactory.saludo = 'hola';
 
     var _authentication = {
         isAuth: false,
@@ -24,15 +26,15 @@
   
       };*/
 
-    var login = function (loginData) {
+    var _login = function (loginData) {
 
-        var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
+        var data = "grant_type=password&username=" + loginData.username + "&password=" + loginData.password;
 
         /*     if (loginData.useRefreshTokens) {
                  data = data + "&client_id=" + ngAuthSettings.clientId;
              }*/
 
-        /*   var deferred = $q.defer();*/
+        var deferred = $q.defer();
 
         $http.post('http://localhost:52465/token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
 
@@ -41,25 +43,25 @@
             }
             else {
                 localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName, refreshToken: "", useRefreshTokens: false });
-            }
+            }*/
             _authentication.isAuth = true;
             _authentication.userName = loginData.userName;
-            _authentication.useRefreshTokens = loginData.useRefreshTokens;
+            //_authentication.useRefreshTokens = loginData.useRefreshTokens;
 
-            deferred.resolve(response);*/
+            deferred.resolve(response);
 
         }).error(function (err, status) {
             //  _logOut();
-            //deferred.reject(err);
+            deferred.reject(err);
         });
 
-        //return deferred.promise;
+        return deferred.promise;
 
     };
 
     var _logOut = function () {
 
-        localStorageService.remove('authorizationData');
+        //localStorageService.remove('authorizationData');
 
         _authentication.isAuth = false;
         _authentication.userName = "";
@@ -157,12 +159,16 @@
      authServiceFactory.login = _login;
      authServiceFactory.logOut = _logOut;
      authServiceFactory.fillAuthData = _fillAuthData;
-     authServiceFactory.authentication = _authentication;
+     
      authServiceFactory.refreshToken = _refreshToken;
  
      authServiceFactory.obtainAccessToken = _obtainAccessToken;
      authServiceFactory.externalAuthData = _externalAuthData;
      authServiceFactory.registerExternal = _registerExternal;*/
+
+    authServiceFactory.authentication = _authentication;
+    authServiceFactory.login = _login;
+    authServiceFactory.logOut = _logOut;
 
     return authServiceFactory;
 }]);

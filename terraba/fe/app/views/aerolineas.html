@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <form class="form-horizontal" role="form">
+            <!--<div class="form-group">
+                <label for="id" class="col-sm-2 control-label">Id</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="id" required tabindex="1" autofocus placeholder="Código de catálogo" ng-model="nuevaAerolinea.id">
+                </div>
+            </div>-->
+            <div class="form-group">
+                <label for="descripcion" class="col-sm-2 control-label">Descripción</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="descripcion" required tabindex="2" placeholder="Nombre o descripción de la aerolínea" ng-model="nuevaAerolinea.descripcion">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" id="guardar" tabindex="3" ng-click="guardar()">Guardar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Lista de aerolíneas</div>
+            <div class="panel-body">
+                <p>Some default panel content here. Nulla vitae elit libero, a pharetra augue. Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>      
+            <input type="search" class="form-control" ng-model="busqueda" placeholder="Digite la información que deseé buscar...">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <!--<th>Id</th>-->
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="a in aerolineas | filter : busqueda">
+                        <!--<td>{{a.id}}</td>-->
+                        <td><a  href="#" ng-click="modificar(a.id)">{{a.descripcion}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
