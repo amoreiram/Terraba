@@ -8,11 +8,13 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using terraba.api.Models;
 
 namespace terraba.api.Controllers
 {
+    [EnableCors(origins: "http://localhost:55535", headers: "*", methods: "*")]
     public class CatalogoController : ApiController
     {
         private TerrabaContext db = new TerrabaContext();

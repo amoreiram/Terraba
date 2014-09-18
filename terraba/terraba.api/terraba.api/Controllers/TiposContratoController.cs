@@ -18,16 +18,18 @@ namespace terraba.api.Controllers
         private TerrabaContext db = new TerrabaContext();
 
         // GET: api/TiposContrato
-        public IQueryable<TipoContrato> GetTiposContrato()
+        public IQueryable<Modelos> GetTiposContrato()
         {
+            //return Json<TipoContrato>(db.TiposContrato);
+            
             return db.TiposContrato;
         }
 
         // GET: api/TiposContrato/5
-        [ResponseType(typeof(TipoContrato))]
+        [ResponseType(typeof(Modelos))]
         public async Task<IHttpActionResult> GetTipoContrato(string id)
         {
-            TipoContrato tipoContrato = await db.TiposContrato.FindAsync(id);
+            Modelos tipoContrato = await db.TiposContrato.FindAsync(id);
             if (tipoContrato == null)
             {
                 return NotFound();
@@ -38,7 +40,7 @@ namespace terraba.api.Controllers
 
         // PUT: api/TiposContrato/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutTipoContrato(string id, TipoContrato tipoContrato)
+        public async Task<IHttpActionResult> PutTipoContrato(string id, Modelos tipoContrato)
         {
             if (!ModelState.IsValid)
             {
@@ -72,8 +74,8 @@ namespace terraba.api.Controllers
         }
 
         // POST: api/TiposContrato
-        [ResponseType(typeof(TipoContrato))]
-        public async Task<IHttpActionResult> PostTipoContrato(TipoContrato tipoContrato)
+        [ResponseType(typeof(Modelos))]
+        public async Task<IHttpActionResult> PostTipoContrato(Modelos tipoContrato)
         {
             if (!ModelState.IsValid)
             {
@@ -102,10 +104,10 @@ namespace terraba.api.Controllers
         }
 
         // DELETE: api/TiposContrato/5
-        [ResponseType(typeof(TipoContrato))]
+        [ResponseType(typeof(Modelos))]
         public async Task<IHttpActionResult> DeleteTipoContrato(string id)
         {
-            TipoContrato tipoContrato = await db.TiposContrato.FindAsync(id);
+            Modelos tipoContrato = await db.TiposContrato.FindAsync(id);
             if (tipoContrato == null)
             {
                 return NotFound();

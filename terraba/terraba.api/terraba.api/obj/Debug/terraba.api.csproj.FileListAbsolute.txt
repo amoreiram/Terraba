@@ -60,4 +60,12 @@ c:\users\gerardo\documents\visual studio 2013\Projects\terraba.api\terraba.api\b
 c:\users\gerardo\documents\visual studio 2013\Projects\terraba.api\terraba.api\bin\System.Web.Http.Owin.xml
 c:\users\gerardo\documents\visual studio 2013\Projects\terraba.api\terraba.api\obj\Debug\terraba.api.dll
 c:\users\gerardo\documents\visual studio 2013\Projects\terraba.api\terraba.api\obj\Debug\terraba.api.pdb
-c:\users\gerardo\documents\visual studio 2013\Projects\terraba.api\terraba.api\obj\Debug\terraba.api.csprojResolveAssemblyReference.cache
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\terraba.api\terraba.api\bin\System.Web.Cors.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\terraba.api\terraba.api\bin\System.Web.Http.Cors.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\terraba.api\terraba.api\bin\System.Web.Http.Cors.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\terraba.api\terraba.api\bin\WebMatrix.Data.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\terraba.api\terraba.api\bin\WebMatrix.Data.xml
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\terraba.api\terraba.api\obj\Debug\terraba.api.csprojResolveAssemblyReference.cache
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\terraba.api\terraba.api\bin\Dapper.dll
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\terraba.api\terraba.api\bin\Dapper.pdb
+C:\Users\Gerardo\Documents\Visual Studio 2013\Projects\terraba.api\terraba.api\bin\Dapper.xml
