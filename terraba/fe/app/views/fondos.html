@@ -46,9 +46,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="f in fondos | orderBy : 'descripcion' | filter : busqueda">
+                    <tr ng-repeat="F in fondos | orderBy : 'descripcion' | filter : busqueda">
                         <td>{{f.codigo}}</td>                        
-                        <td><a href="#" ng-click="modificar(f.id)">{{f.descripcion}}</a></td>
+                        <td><a href="#" ng-click="modificar(F.id)">{{F.descripcion}}</a></td>
                     </tr>
                 </tbody>
             </table>

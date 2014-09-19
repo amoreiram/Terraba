@@ -104,6 +104,33 @@ namespace terraba.api.Models
         public string Descripcion { get; set; }
     }
 
+    [Table("tipos_procedimiento")]
+    public class TipoProcedimiento
+    {
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "La descripcion no puede ser nula")]
+        public string Descripcion { get; set; }
+    }
+
+    [Table("tipos_garantia_timbre")]
+    public class TipoGarantiaTimbre
+    {
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "La descripcion no puede ser nula")]
+        public string Descripcion { get; set; }
+    }
+
+    [Table("estados_tramite")]
+    public class EstadoTramite
+    {
+        public int Id { get; set; }
+
+        [Required(ErrorMessage = "La descripcion no puede ser nula")]
+        public string Descripcion { get; set; }
+    }
+
     public class TerrabaContext : DbContext
     {
         public DbSet<Modelos> TiposContrato { get; set; }
@@ -114,6 +141,9 @@ namespace terraba.api.Models
         public System.Data.Entity.DbSet<terraba.api.Models.TipoContratacion> TipoContratacions { get; set; }
         public System.Data.Entity.DbSet<terraba.api.Models.Aerolinea> Aerolineas { get; set; }
         public System.Data.Entity.DbSet<terraba.api.Models.TipoImputacion> TiposImputacion { get; set; }
+        public System.Data.Entity.DbSet<terraba.api.Models.TipoProcedimiento> TiposProcedimiento{ get; set; }
+        public System.Data.Entity.DbSet<terraba.api.Models.TipoGarantiaTimbre> TiposGarantiaTimbre { get; set; }
+        public System.Data.Entity.DbSet<terraba.api.Models.EstadoTramite> EstadosTramite { get; set; }
         public System.Data.Entity.DbSet<terraba.api.Models.Fondo> Fondos { get; set; }
 
         public System.Data.Entity.DbSet<terraba.api.Models.TipoSolicitudPedido> TiposSolicitudPedido { get; set; }

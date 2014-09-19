@@ -51,6 +51,15 @@ app.config(function ($routeProvider) {
     }).when('/lineas-solicitud-pedido', {
         templateUrl: '/app/views/lineas-solicitud-pedido.html',
         controller: 'lineasSolicitudPedidoController'
+    }).when('/tipos-procedimiento', {
+        templateUrl: '/app/views/tipos-procedimiento.html',
+        controller: 'tiposProcedimientoController'
+    }).when('/estados-tramite', {
+        templateUrl: '/app/views/estados-tramite.html',
+        controller: 'estadosTramiteController'
+    }).when('/tipos-garantia-timbre', {
+        templateUrl: '/app/views/tipos-garantia-timbre.html',
+        controller: 'tiposGarantiaTimbreController'
     }).otherwise({
         redirectTo: '/'
     });

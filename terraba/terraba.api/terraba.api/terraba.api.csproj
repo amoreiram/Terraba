@@ -213,6 +213,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AerolineasController.cs" />
     <Compile Include="Controllers\CatalogoController.cs" />
+    <Compile Include="Controllers\EstadosTramiteController.cs" />
     <Compile Include="Controllers\FondosController.cs" />
     <Compile Include="Controllers\FormasPagoController.cs" />
     <Compile Include="Controllers\FuentesFinanciamientoController.cs" />
@@ -223,6 +224,8 @@
     <Compile Include="Controllers\TipoImputacionsController.cs" />
     <Compile Include="Controllers\TiposContratacionController.cs" />
     <Compile Include="Controllers\TiposContratoController.cs" />
+    <Compile Include="Controllers\TiposGarantiaTimbreController.cs" />
+    <Compile Include="Controllers\TiposProcedimientoController.cs" />
     <Compile Include="Controllers\TiposSolicitudPedidoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -278,7 +281,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
